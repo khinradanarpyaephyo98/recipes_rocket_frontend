@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import dotenv from "dotenv";
 
-
-dotenv.config({path:'.env'});
 export const Auth = () => {
   return (
     <div className="auth">

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
 import axios from "axios";
-import dotenv from "dotenv";
+/* import dotenv from "dotenv";
 
 
 dotenv.config({path:'.env'});
-
+ */
 export const SavedRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const userID = useGetUserID();
