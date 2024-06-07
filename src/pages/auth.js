@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import dotenv from "dotenv";
 
+
+dotenv.config({path:'.env'});
 export const Auth = () => {
   return (
     <div className="auth">
@@ -24,7 +27,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:3001/auth/login", {
+      const result = await axios.post(`process.env.${API_URL}/auth/login`, {
         username,
         password,
       });
@@ -75,7 +78,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:3001/auth/register", {
+      await axios.post(`${process.env.API_URL}/auth/register`, {
         username,
         password,
       });
