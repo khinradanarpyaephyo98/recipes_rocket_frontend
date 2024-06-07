@@ -24,7 +24,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post(`process.env.${API_URL}/auth/login`, {
+      const result = await axios.post(`${API_URL}/auth/login`, {
         username,
         password,
       });

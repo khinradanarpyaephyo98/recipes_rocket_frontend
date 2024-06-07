@@ -12,7 +12,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get(`${process.env.API_URL}/recipes`);
+        const response = await axios.get(`${API_URL}/recipes`);
         setRecipes(response.data);
       } catch (err) {
         console.log(err);
@@ -22,7 +22,7 @@ export const Home = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `${process.env.API_URL}/recipes/savedRecipes/ids/${userID}`
+          `${API_URL}/recipes/savedRecipes/ids/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
@@ -36,7 +36,7 @@ export const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put(`${process.env.API_URL}/recipes`, {
+      const response = await axios.put(`${API_URL}/recipes`, {
         recipeID,
         userID,
       });
