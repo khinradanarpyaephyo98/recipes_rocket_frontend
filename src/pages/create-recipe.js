@@ -42,7 +42,7 @@ export const CreateRecipe = () => {
     event.preventDefault();
     try {
       await axios.post(
-        `${API_URL}/recipes`,
+        `${process.env.API_URL}/recipes`,
         { ...recipe },
         {
           headers: { authorization: cookies.access_token },
