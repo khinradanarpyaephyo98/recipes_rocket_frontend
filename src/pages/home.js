@@ -12,7 +12,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get(`${API_URL}/recipes`);
+        const response = await axios.get(`${process.env.API_URL}/recipes`);
         setRecipes(response.data);
       } catch (err) {
         console.log(err);
