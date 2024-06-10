@@ -3,6 +3,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import {API_URL} from "../env_store";
+
 export const Auth = () => {
   return (
     <div className="auth">
@@ -24,7 +25,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post(`${process.env.API_URL}/auth/login`, {
+      const result = await axios.post(`${API_URL}/auth/login`, {
         username,
         password,
       });
@@ -75,7 +76,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`${process.env.API_URL}/auth/register`, {
+      await axios.post(`${API_URL}/auth/register`, {
         username,
         password,
       });
