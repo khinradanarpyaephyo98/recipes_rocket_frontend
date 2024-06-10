@@ -3,9 +3,9 @@ import axios from "axios";
 import { useGetUserID } from "../hooks/useGetUserID";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-/* import dotenv from "dotenv";
+import {API_URL} from "../env_store";
 
-dotenv.config({path:'.env'}) */
+
 export const CreateRecipe = () => {
   const userID = useGetUserID();
   const [cookies, _] = useCookies(["access_token"]);
@@ -42,7 +42,7 @@ export const CreateRecipe = () => {
     event.preventDefault();
     try {
       await axios.post(
-        `${process.env.API_URL}/recipes`,
+        `${API_URL}/recipes`,
         { ...recipe },
         {
           headers: { authorization: cookies.access_token },

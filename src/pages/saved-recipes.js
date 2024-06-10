@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
 import axios from "axios";
-/* import dotenv from "dotenv";
+import {API_URL} from "../env_store";
 
-
-dotenv.config({path:'.env'});
- */
+ 
 export const SavedRecipes = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const userID = useGetUserID();
@@ -14,7 +12,7 @@ export const SavedRecipes = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `${process.env.API_URL}/recipes/savedRecipes/${userID}`
+          `${API_URL}/recipes/savedRecipes/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-
+import {API_URL} from "../env_store";
 export const Auth = () => {
   return (
     <div className="auth">
